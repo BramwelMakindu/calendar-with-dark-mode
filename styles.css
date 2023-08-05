@@ -1,0 +1,199 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: poppins;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(233, 237, 240);
+}
+
+.container{
+    width: 450px;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, .3);
+    border-radius: 10px;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.current-date{
+    font-weight: 600;
+    font-size: 1.5rem;
+    transition: all .2s;
+}
+
+header i{
+    cursor: pointer;
+    padding: 8px 10px;
+    border-radius: 50%;
+    transition: all .2s;
+}
+
+header i:hover{
+    background-color: #f2f2f2;
+}
+
+.calendar{
+    display: flex;
+    flex-direction: column;
+}
+
+.week{
+    display: flex;
+    margin-bottom: 10px;
+    gap: 6px;
+}
+
+.week div{
+    font-size: 15px;
+    width: calc(100% / 7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    height: 50px;
+    transition: all .2s;
+}
+
+.days{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.days div{
+    height: 50px;
+    width: calc(100% / 7.8);
+    border-radius: 5px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all .2s;
+}
+
+.days div:hover{
+    background-color: #f2f2f2;
+}
+
+.days div.active{
+    background-color: #f55c69;
+    color: white;
+}
+
+.days div.inactive{
+    color: #aaa;
+}
+
+.toggle{
+    position: relative;
+    width: 60px;
+    height: 30px;
+    margin-bottom: 2rem;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: white;
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, .3);
+}
+
+.toggle-ball{
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    left: 1px;
+    background-color: #f55c69;
+    transition: all .2s ease;
+}
+
+
+/*------for dark mode------*/
+
+body.dark{
+    background-color: #161623;
+}
+
+.toggle.dark{
+    background-color: #161623;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.toggle-ball.dark{
+    transform: translateX(31px);
+    background-color: white;
+}
+
+.container.dark{
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.week.dark div{
+    background: white;
+    border-radius: 5px;
+} 
+
+.days.dark div{
+    color: white;
+}
+
+.days.dark div:hover{
+    color: black;
+}
+
+.days.dark div.inactive{
+    color: #161623;
+}
+
+.days.dark div.inactive:hover{
+    background-color: unset;
+}
+
+.days.dark div.active{
+    background-color: rgb(41, 234, 248);
+    color: black;
+}
+
+header.dark i, header.dark p{
+    color: white;
+}
+
+header.dark i:hover{
+    color: black;
+}
+
+/*-------for small screen------*/
+
+@media only screen and (max-width: 420px) {
+    .container{
+        width: 350px;
+    }
+
+    .week div {
+        height: 35px;
+    }
+
+    .days div{
+        height: 35px;
+        width: calc(100% / 8);
+    }
+}
